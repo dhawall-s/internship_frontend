@@ -71,3 +71,19 @@ prime(90);
 
 // console.log(prime(11)); 
 // console.log(prime(17)); 
+
+
+let a = "dhawal saini"
+console.log(a);
+console.log(typeof a);
+for(let i=0;i<a.length;i++){
+    console.log(a[i]);
+}
+for(let i of a){
+    console.log(i);
+}
+
+console.log(a.length);
+console.log(a.toLowerCase());
+console.log(a.toUpperCase());
+console.log(a.indexOf("i"));
