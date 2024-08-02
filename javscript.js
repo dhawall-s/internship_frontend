@@ -73,7 +73,7 @@ prime(90);
 // console.log(prime(17)); 
 
 
-let a = "dhawal saini"
+let a = "       dhawalSaini     "
 console.log(a);
 console.log(typeof a);
 for(let i=0;i<a.length;i++){
@@ -87,3 +87,37 @@ console.log(a.length);
 console.log(a.toLowerCase());
 console.log(a.toUpperCase());
 console.log(a.indexOf("i"));
+console.log(a.slice(7,3));
+console.log(a.slice(3,-3));
+console.log(a.repeat(3));
+console.log(a.replace("l","n"));
+console.log(a.replaceAll("a","n"));
+console.log(a.includes("alS"));
+console.log(a.charAt(7));
+console.log(a.charCodeAt(7));
+console.log(a.trimStart());
+console.log(a.trimEnd());
+console.log(a.trim());
+let b=a.trim()
+console.log(b.length);
+
+
+let a=[10,20,30,40,50,60,70,80,90,100];
+// console.log(a.slice(4,9));
+// a.splice(3,4,"aman");
+// console.log(a);
+
+
+function output(x){
+    // console.log(x);
+    x();
+}
+
+// function show(){
+//     console.log("hello ");
+// }
+
+output(function(){
+    console.log("hello");
+})
+// output(show)
