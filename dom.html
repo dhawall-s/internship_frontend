@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color and Date Demo</title>
+</head>
+<body id="bo">
+    <!-- Color Buttons -->
+    <button id="red">RED</button>
+    <button id="black">BLACK</button>
+    <button id="green">GREEN</button>
+
+    <!-- Date Button -->
+    <button id="date">Show Date</button>
+    <h1 id="h"></h1>
+
+    <!-- Color Input Form -->
+    <form>
+        <label for="inputColor">Enter a color:</label>
+        <input type="text" id="inputColor" placeholder="Enter color name or hex code" />
+        <button type="button" id="colorSubmit">Submit</button>
+    </form>
+
+    <!-- Arithmetic Input Form -->
+    <form>
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" placeholder="Enter first number" />
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" placeholder="Enter second number" />
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <button type="button" id="calculateSum">Calculate</button>
+    </form>
+    <h1 id="result"></h1>
+
+    <!-- Random RGB Input Field and Button -->
+    <input type="text" id="randomColors" readonly placeholder="Random Colors (RGB)" />
+    <button type="button" id="generateColors">Generate Random Colors</button>
+
+    <script>
+        // Color Buttons Functionality
+        document.getElementById("red").onclick = function() {
+            document.getElementById("bo").style.backgroundColor = "red";
+        };
+        document.getElementById("black").onclick = function() {
+            document.getElementById("bo").style.backgroundColor = "black";
+        };
+        document.getElementById("green").onclick = function() {
+            document.getElementById("bo").style.backgroundColor = "green";
+        };
+
+        // Date Button Functionality
+        document.getElementById("date").onclick = function() {
+            let date = new Date();
+            document.getElementById("h").innerHTML = date;
+        };
+
+        // Color Input Form Functionality
+        document.getElementById("colorSubmit").onclick = function() {
+            let color = document.getElementById("inputColor").value;
+            document.getElementById("bo").style.backgroundColor = color;
+        };
+
+        // Arithmetic Operations Functionality
+        document.getElementById("calculateSum").onclick = function() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let operation = document.getElementById("operation").value;
+
+            let sum = num1 + num2;
+            let subtract = num1 - num2;
+            let multiplication = num1 * num2;
+            let divide = num1 / num2;
+
+            if (operation === 'add') {
+                console.log("Sum:", sum);
+            } else if (operation === 'subtract') {
+                console.log("Difference:", subtract);
+            } else if (operation === 'multiply') {
+                console.log("Product:", multiplication);
+            } else if (operation === 'divide') {
+                if (num2 === 0) {
+                    console.log("Error: Cannot divide by zero");
+                } else {
+                    console.log("Quotient:", divide);
+                }
+            } else {
+                console.log("Invalid operation");
+            }
+        };
+
+        function getRandomRGBValue() {
+            return Math.random() * 255; // Generates a number between 0 and 255
+        }
+
+        // Generate Three Random RGB Colors Functionality
+        document.getElementById("generateColors").onclick = function() {
+            let red = Math.round(getRandomRGBValue());
+            let green = Math.round(getRandomRGBValue());
+            let blue = Math.round(getRandomRGBValue());
+
+            // Create an RGB string
+            let rgbString = `rgb(${red}, ${green}, ${blue})`;
+
+            // Display the RGB string in the input field
+            document.getElementById("randomColors").value = rgbString;
+
+            // Set the background color to the generated RGB color
+            document.getElementById("bo").style.backgroundColor = rgbString;
+        };
+
+        // Automatically generate and set random colors every second
+        setInterval(() => {
+            let red = Math.round(getRandomRGBValue());
+            let green = Math.round(getRandomRGBValue());
+            let blue = Math.round(getRandomRGBValue());
+
+            // Create an RGB string
+            let rgbString = `rgb(${red}, ${green}, ${blue})`;
+
+            // Display the RGB string in the input field
+            document.getElementById("randomColors").value = rgbString;
+
+            // Set the background color to the generated RGB color
+            document.getElementById("bo").style.backgroundColor = rgbString;
+        }, 1000);
+    
+    // Function to generate a random number between 0 and 255
+    // function getRandomRGBValue() {
+    //     return Math.random() * 255; // Generates a number between 0 and 255
+    // }
+
+    // Generate Three Random RGB Colors Functionality
+    // document.getElementById("generateColors").onclick = function() {
+    //     let red = Math.round(getRandomRGBValue());
+    //     let green = Math.round(getRandomRGBValue());
+    //     let blue = Math.round(getRandomRGBValue());
+
+    //     // Create an RGB string
+    //     let rgbString = `rgb(${red}, ${green}, ${blue})`;
+
+    //     // Display the RGB string in the input field
+    //     document.getElementById("randomColors").value = rgbString;
+
+    //     // Set the background color to the generated RGB color
+    //     document.getElementById("bo").style.backgroundColor = rgbString;
+    //};
+
+    // Update Background Color on Enter Key
+    // document.addEventListener("keydown", function(event) {
+    //     if (event.key === "Enter") {
+    //         let color = document.getElementById("randomColors").value;
+    //         if (color) {
+    //             document.getElementById("bo").style.backgroundColor = color;
+    //         }
+    //     }
+    // });
+    
+
+        // Function to generate a random number between 0 and 255
+        // function getRandomRGBValue() {
+            // return Math.random() * 255; // Generates a number between 0 and 255
+        // }
+        
+        // // Generate Three Random RGB Colors Functionality
+        // document.getElementById("generateColors").onclick = function() {
+        //     let red = Math.round(getRandomRGBValue());
+        //     let green = Math.round(getRandomRGBValue());
+        //     let blue = Math.round(getRandomRGBValue());
+        
+        //     // Create an RGB string
+        //     let rgbString = `rgb(${red}, ${green}, ${blue})`;
+        
+        //     // Display the RGB string in the input field
+        //     document.getElementById("randomColors").value = rgbString;
+        
+        //     // Set the background color to the generated RGB color
+        //     document.getElementById("bo").style.backgroundColor = rgbString;
+        // };
+
+
+    </script>
+</body>
+</html>

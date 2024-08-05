@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Input Fields with Classes -->
+    <input type="text" class="inputField" placeholder="Enter your name">
+    <input type="text" class="inputField" placeholder="Enter your email">
+    <input type="text" class="inputField" placeholder="Enter your mobile">
+    <input type="text" class="inputField" placeholder="Enter your password">
+
+    <!-- Submit Button with Class -->
+    <button class="btn">Submit</button>
+
+    <!-- <script>
+        // Function to handle button click
+        document.querySelector(".submitButton").onclick = function() {
+            // Retrieve all input fields with class "inputField"
+            let inputs = document.querySelectorAll(".inputField");
+
+            // Extract values from input fields
+            let name = inputs[0].value;
+            let email = inputs[1].value;
+            let mobile = inputs[2].value;
+            let password = inputs[3].value;
+
+            // Print details to the console
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Mobile:", mobile);
+            console.log("Password:", password);
+        };
+    </script> -->
+
+    <script>
+        document.getElementById("btn").onclick=function(){
+            let data=document.getElementsByClassName("inputField");
+            for(let i of data){
+                console.log(i.value);
+            }
+        }
+    </script>
+</body>
+</html>
